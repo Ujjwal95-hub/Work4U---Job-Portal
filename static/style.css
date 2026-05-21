@@ -1,0 +1,212 @@
+body {
+    animation: pageFadeIn 0.4s ease;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.alert {
+    animation: slideInAlert 0.4s ease;
+}
+
+@keyframes slideInAlert {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn {
+    transition: transform 0.1s ease, box-shadow 0.2s ease !important;
+}
+
+.btn:active {
+    transform: scale(0.96) !important;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hero-section .form-control,
+.hero-section .btn {
+    animation: slideUpHero 0.6s ease both;
+}
+
+@keyframes slideUpHero {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.badge.bg-primary {
+    animation: badgePop 0.3s ease;
+}
+
+@keyframes badgePop {
+    0% {
+        transform: scale(0.8);
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.table tbody tr {
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background: #f0f4ff !important;
+    transform: translateX(3px);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%);
+    padding: 80px 0;
+}
+
+.job-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 12px !important;
+}
+
+.job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+.category-card {
+    transition: all 0.2s ease;
+    border-radius: 12px !important;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2) !important;
+    background-color: #e8f0fb !important;
+}
+
+.navbar {
+    padding: 12px 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem !important;
+    letter-spacing: -0.5px;
+}
+
+.card {
+    border-radius: 12px !important;
+}
+
+.btn {
+    border-radius: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0a58ca, #084298);
+}
+
+.badge {
+    border-radius: 6px;
+    padding: 5px 10px;
+}
+
+.table th {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+}
+
+footer {
+    background: #1a1a2e !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.alert {
+    border-radius: 10px;
+    border: none;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0d6efd;
+    border-radius: 3px;
+}
