@@ -123,7 +123,7 @@ http://127.0.0.1:5000
 ## 🚀 Deployment
 
 This project is deployed on **Render**:
-- 🔗 Live URL: `https://work4u.onrender.com` *(update after deployment)*
+- 🔗 Live URL: `https://work4u-job-portal.onrender.com/`
 
 ### Deploy on Render:
 1. Push code to GitHub
