@@ -72,7 +72,7 @@ Work4U/
 
 ### Step 1 — Clone the Repository
 ```bash
-git clone https://github.com/Ujjwal95-hub/Work4U.git
+git clone git clone https://github.com/Ujjwal95-hub/Work4U---Job-Portal.git
 cd Work4U
 ```
 
