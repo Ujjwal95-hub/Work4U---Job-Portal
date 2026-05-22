@@ -42,20 +42,26 @@
                                 {% endif %}
                             </span>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end">{%- if current_user.role == 'Job Seeker'
-                            -%}<li><a class="dropdown-item" href="{{ url_for('seeker_dashboard') }}"><i
-                                        class="bi bi-grid"></i> Dashboard</a></li>{%- elif current_user.role ==
-                            'Employer' -%}
-                            <li><a class="dropdown-item" href="{{ url_for('employer_dashboard') }}"><i
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            {% if current_user.role == 'jobseeker' %}
+                            <li><a class="dropdown-item" href="{{ url_for('seeker_dashboard') }}"><i
                                         class="bi bi-grid"></i> Dashboard</a></li>
+                            {% elif current_user.role == 'employer' %}
+                            <li><a class="dropdown-item" href="{{ url_for('employer_dashboard') }}"><i
+                                        class="bi bi-grid"></i> Dashboard</a>
+                            </li>
                             <li><a class="dropdown-item" href="{{ url_for('post_job') }}"><i
-                                        class="bi bi-plus-circle"></i> Post a Job</a></li>{%- elif current_user.role ==
-                            'Admin' -%}<li><a class="dropdown-item" href="{{ url_for('admin_panel') }}"><i
-                                        class="bi bi-shield"></i> Admin Panel</a></li>{%- endif -%}<li>
+                                        class="bi bi-plus-circle"></i> Post a Job</a></li>
+                            {% elif current_user.role == 'admin' %}
+                            <li><a class="dropdown-item" href="{{ url_for('admin_panel') }}"><i
+                                        class="bi bi-shield"></i> Admin Panel</a></li>
+                            {% endif %}
+                            <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item text-danger" href="{{ url_for('logout') }}"><i
-                                        class="bi bi-box-arrow-right"></i> Logout</a></li>
+                                        class="bi bi-box-arrow-right"></i>
+                                    Logout</a></li>
                         </ul>
                     </li>{%- else -%}
                     <li class="nav-item">
@@ -89,7 +95,8 @@
     <footer class="bg-dark text-white mt-5 py-4">
         <div class="container text-center">
             <p class="mb-1"><i class="bi bi-briefcase-fill"></i> <strong>Work4U</strong> — Find Your Dream Job</p>
-            <p class="text-white-50 small mb-0">Built with Flask & Bootstrap | &copy; 2026 Work4U | All Rights Reserved</p>
+            <p class="text-white-50 small mb-0">Built with Flask & Bootstrap | &copy; 2026 Work4U | All Rights Reserved
+            </p>
         </div>
     </footer>
 

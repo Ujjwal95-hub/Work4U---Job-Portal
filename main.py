@@ -18,7 +18,7 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-# ── Create DB & Admin ──────────────────────────────────────────
+# Create DB & Admin
 with app.app_context():
     db.create_all()
     if not User.query.filter_by(email='admin@work4u.com').first():
@@ -37,7 +37,11 @@ with app.app_context():
 @app.route('/')
 def index():
     jobs = Job.query.order_by(Job.created_at.desc()).limit(6).all()
-    return render_template('index.html', jobs=jobs)
+    employer_count = User.query.filter_by(role='employer').count()
+    seeker_count = User.query.filter_by(role='jobseeker').count()
+    return render_template('index.html', jobs=jobs, 
+                         employer_count=employer_count, 
+                         seeker_count=seeker_count)
 
 
 # ── Register ───────────────────────────────────────────────────

@@ -29,15 +29,15 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-4">
-                <h3 class="text-primary fw-bold">{{ Job.query.count() if Job else '0' }}+</h3>
+                <h3 class="text-primary fw-bold">{{ jobs|length }}+</h3>
                 <p class="text-muted">Jobs Available</p>
             </div>
             <div class="col-md-4">
-                <h3 class="text-primary fw-bold">{{ User.query.filter_by(role='employer').count() if User else '0' }}+</h3>
+                <h3 class="text-primary fw-bold">{{ employer_count }}+</h3>
                 <p class="text-muted">Companies Hiring</p>
             </div>
             <div class="col-md-4">
-                <h3 class="text-primary fw-bold">{{ User.query.filter_by(role='jobseeker').count() if User else '0' }}+</h3>
+                <h3 class="text-primary fw-bold">{{ jobseeker_count }}+</h3>
                 <p class="text-muted">Job Seekers</p>
             </div>
         </div>
